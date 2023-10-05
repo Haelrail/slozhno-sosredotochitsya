@@ -1,5 +1,163 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+.header {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.decorated-zone {
+  padding: var(--decorated-zone-padding);
+  /* outline: 1px solid var(--small-header-text-color); */
+}
+
+/* .header__decorative-element_top-right {
+  justify-self: end;
+  display: flex;
+  flex-direction: row;
+  //border: 1px solid var(--small-header-text-color);
+  //border-bottom: none;
+  //border-left: none;
+}
+
+.header__decorative-element_top-right::after {
+  content: "";
+  border-radius: 50%;
+  background-color: var(--title-decor-back-color);
+  width: 9px;
+  height: 9px;
+  align-self: center;
+  margin: 0 9px 0 10px;
+}
+
+.header__decorative-element-text {
+  text-transform: uppercase;
+  color: var(--small-header-text-color);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+} */
+
+.empty-tag {
+  position: relative;
+}
+
+.empty-tag::before {
+  content: 'rec';
+  position: absolute;
+  color: var(--small-header-text-color);
+  font-size: 20px;
+  right: 25px;
+  text-transform: uppercase;
+}
+
+.empty-tag::after {
+  content: ' ';
+  position: absolute;
+  color: var(--small-header-text-color);
+  width: 9px;
+  height: 9px;
+  background-color: var(--small-header-text-color);
+  border: 1px solid var(--small-header-text-color);
+  border-radius: 90%;
+  right: 10px;
+  top: 7px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  margin-top: 5.83vh;
+}
+
+.header__theme-menu-list {
+
+}
+
+.header__theme-menu-item {
+  margin-top: 1.95vh;
+}
+
+.header__theme-menu-item:first-child {
+  margin-top: 0;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  text-transform: lowercase;
+  border: none;
+  min-height: 26px;
+  color: var(--small-header-text-color);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 0 13px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover-border-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--button-hover-border-color);
+}
+
+.header__theme-menu-button_type_light {
+
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--small-header-text-color);
+}
+
+.header__tagline {
+  margin-top: 9.73vh;
+}
+
+.header__tagline-text {
+  font-size: var(--tagline-text-size);
+  color: var(--tagline-text-color);
+  text-shadow: 4px 4px 0 var(--title-decor-back-color);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+.header__title {
+  margin-top: 8.23vh;
+  margin-bottom: 9.88vh;
+}
+
+.title-decor {
+  background-color: var(--title-decor-back-color);
+  color: var(--title-decor-text-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.header__title-text {
+
+}
+
 .page {
+  background-color: var(--background-color);
+  background-image: var(--cover-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
+
