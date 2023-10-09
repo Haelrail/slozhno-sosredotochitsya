@@ -1,16 +1,50 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.header {
-  display: grid;
+/*
+///////////////////////////////////////////////////////////////////////////////////
+TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light theme.
+///////////////////////////////////////////////////////////////////////////////////
+*/
+
+.body {
   min-height: 100vh;
-  grid-template-columns: 1;
-  align-items: center;
-  justify-content: space-between;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  padding-block-end: 10px;
+  block-size: max(668px, 100vh);
+  /* grid-template-columns: 1; */
+  /* align-items: end; */
+  /* justify-content: end; */
 }
 
 .decorated-zone {
-  padding: var(--decorated-zone-padding);
+  /* padding: var(--decorated-zone-padding); */
   /* outline: 1px solid var(--small-header-text-color); */
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--small-header-text-color);
+  border-left: 1px solid var(--small-header-text-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--small-header-text-color);
+  border-right: 1px solid var(--small-header-text-color);
 }
 
 /* .header__decorative-element_top-right {
@@ -47,16 +81,19 @@
 }
 
 .empty-tag::before {
-  content: 'rec';
+  content: "rec";
   position: absolute;
   color: var(--small-header-text-color);
-  font-size: 20px;
-  right: 25px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  right: 28px;
   text-transform: uppercase;
 }
 
 .empty-tag::after {
-  content: ' ';
+  content: "";
   position: absolute;
   color: var(--small-header-text-color);
   width: 9px;
@@ -64,8 +101,8 @@
   background-color: var(--small-header-text-color);
   border: 1px solid var(--small-header-text-color);
   border-radius: 90%;
-  right: 10px;
-  top: 7px;
+  right: 9px;
+  top: 8px;
 }
 
 .header__theme-menu {
@@ -74,7 +111,7 @@
 }
 
 .header__theme-menu-list {
-
+  margin-right: 13px;
 }
 
 .header__theme-menu-item {
@@ -136,6 +173,8 @@
 .header__title {
   margin-top: 8.23vh;
   margin-bottom: 9.88vh;
+  /* width: 100vw; */
+  justify-self: end;
 }
 
 .title-decor {
@@ -147,8 +186,49 @@
   line-height: 23.4px;
 }
 
+.title-decor-small-font-weight {
+  font-weight: 400;
+  margin-top: 20px;
+}
+
 .header__title-text {
 
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1;
+  gap: 20px;
+}
+
+.section: {
+  margin-top: 40px;
+}
+
+.section:not(:first-child) {
+  margin-top: 50px;
+}
+
+.section__title {
+  color: var(--small-header-text-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.section__body {
+  display: grid;
+  gap: 20px;
+}
+
+.section__body-text {
+  color: var(--text-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px;
+  margin-top: 10px;
 }
 
 .page {
@@ -158,6 +238,183 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  padding: 10px;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
+.image-section {
+  gap: 10px;
+}
+
+/* .image-section img {
+  width: calc(100vw - 20px);
+} */
+
+.image-section__block-card:not(:first-child) {
+  margin-top: 10px;
+}
+
+.image-section__block-card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.footer {
+  position: relative;
+  block-size: max(668px, 100vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block-start: 40px;
+}
+
+.footer__tagline-text {
+  font-size: var(--tagline-text-size);
+  color: var(--tagline-text-color);
+  text-shadow: 2px 2px 0 var(--title-decor-back-color);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+@media (min-width: 768px) {
+
+  .page {
+    padding: 20px;
+  }
+
+  .header {
+    block-size: max(1024px, 100vh);
+    padding-block-end: 20px;
+  }
+
+  .decorated-zone::before {
+    left: 20px;
+    bottom: 20px;
+  }
+  
+  .decorated-zone::after {
+    right: 20px;
+    top: 20px;
+  }
+
+  .block-paragraph-position {
+    display: grid;
+    grid-template-columns: 30.75vw 1fr;
+    gap: 20px;
+  }
+  
+  .header__title {
+    width: 50vw;
+  }
+
+  .image-section {
+    gap: 20px;
+  }
+
+  .image-section__block {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* column-gap: 20px; */
+  }
+
+  .image-section__block-card:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .image-section__block-card img {
+    margin: 0;
+  }
+
+  .image-section__block-card:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  .image-section__block-card:nth-child(2) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
+  }
+  
+  .image-section__block-card:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
+  }
+  
+  .image-section__block-card:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+  }
+  
+  .image-section__block-card:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+  }
+
+  .image-section__block-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .footer {
+    block-size: max(1024px, 100vh);
+    margin-block-start: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  :root {
+    --page-padding: 20px;
+  }
+
+  .header {
+    block-size: max(768px, 100vh);
+  }
+
+  .header__theme-menu {
+    margin-top: 0;
+    justify-self: center;
+    /* align-self: center;
+    display: flex;
+    flex-direction: row; */
+    /* display: grid; */
+    /* align-items: start; */
+    /* justify-items: flex-start; */
+    /* gap: 36px; */
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    margin-right: initial;
+  }
+
+  .header__theme-menu-item {
+    margin-top: 0;
+}
+
+  .inline-paragraph-position {
+    display: block;
+    gap: 20px;
+  }
+
+  .inline-paragraph-position .section__title {
+    width: 30.75vw;
+  }
+
+  .inline-paragraph-position .section__body {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer {
+    block-size: max(768px, 100vh);
+  }
+}
