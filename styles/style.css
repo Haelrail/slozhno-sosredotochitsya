@@ -2,7 +2,7 @@
 
 /*
 ///////////////////////////////////////////////////////////////////////////////////
-TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light theme.
+TODO: 1) header-text size 2) reorganise variables 3) buttons position in light theme.
 ///////////////////////////////////////////////////////////////////////////////////
 */
 
@@ -13,11 +13,10 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
 .header {
   position: relative;
   display: grid;
-  padding-block-end: 10px;
-  block-size: max(668px, 100vh);
-  /* grid-template-columns: 1; */
-  /* align-items: end; */
-  /* justify-content: end; */
+  padding-block: 10px;
+  padding-inline: 10px;
+  /* block-size: max(668px, 100vh); */
+  min-height: 100vh;
 }
 
 .decorated-zone {
@@ -195,13 +194,19 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
 
 }
 
+.main {
+  padding-inline: 10px;
+  padding-block: 40px;
+  /* display: flex; */
+}
+
 .section {
   display: grid;
   grid-template-columns: 1;
   gap: 20px;
 }
 
-.section: {
+.section {
   margin-top: 40px;
 }
 
@@ -231,6 +236,28 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
   margin-top: 10px;
 }
 
+.link {
+  color: var(--text-color);
+  text-shadow: 1px 1px 0 var(--tagline-text-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
 .page {
   background-color: var(--background-color);
   background-image: var(--cover-image);
@@ -238,7 +265,7 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 10px;
+  /* padding: 10px; */
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
@@ -263,11 +290,13 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
 
 .footer {
   position: relative;
-  block-size: max(668px, 100vh);
+  /* block-size: max(668px, 100vh); */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-block-start: 40px;
+  padding: 10px;
+  /* margin-block-start: 40px; */
 }
 
 .footer__tagline-text {
@@ -281,13 +310,14 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
 
 @media (min-width: 768px) {
 
-  .page {
+  /* .page {
     padding: 20px;
-  }
+  } */
 
   .header {
-    block-size: max(1024px, 100vh);
-    padding-block-end: 20px;
+    /* block-size: max(1024px, 100vh); */
+    padding-block: 20px;
+    padding-inline: 20px;
   }
 
   .decorated-zone::before {
@@ -308,6 +338,11 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
   
   .header__title {
     width: 50vw;
+  }
+
+  .main {
+    padding-inline: 20px;
+    padding-block: 60px;
   }
 
   .image-section {
@@ -362,20 +397,21 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
   }
 
   .footer {
-    block-size: max(1024px, 100vh);
-    margin-block-start: 60px;
+    /* block-size: max(1024px, 100vh); */
+    /* margin-block-start: 60px; */
+    padding: 20px;
   }
 }
 
 @media (min-width: 1024px) {
 
-  :root {
+  /* :root {
     --page-padding: 20px;
-  }
+  } */
 
-  .header {
+  /* .header {
     block-size: max(768px, 100vh);
-  }
+  } */
 
   .header__theme-menu {
     margin-top: 0;
@@ -414,7 +450,8 @@ TODO: 1) paddings 2) links 3) reorganise variables 4) REC disappear in light the
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .footer {
+  /* .footer {
     block-size: max(768px, 100vh);
-  }
+    min-height: 100vh;
+  } */
 }

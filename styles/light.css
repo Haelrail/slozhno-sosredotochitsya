@@ -41,3 +41,7 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 }
+
+.page.theme_light .empty-tag {
+  display: none;
+}
