@@ -13,9 +13,7 @@
   --title-decor-back-color: #FF8DCB;
   --button-hover-border-color: #32312D66;
   --cover-image: url(../images/cover-image-light.png);
-  /* --page-padding: 10px; */
   --tagline-text-color: #FFC2E6;
-  --tagline-text-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
 
 @media (prefers-color-scheme: light) {
@@ -27,9 +25,7 @@
   --title-decor-back-color: #FF8DCB;
   --button-hover-border-color: #32312D66;
   --cover-image: url(../images/cover-image-light.png);
-  /* --page-padding: 10px; */
   --tagline-text-color: #FFC2E6;
-  --tagline-text-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }
 

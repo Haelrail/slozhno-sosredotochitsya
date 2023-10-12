@@ -13,9 +13,7 @@
   --title-decor-back-color: #FF0070;
   --button-hover-border-color: #FF0070;
   --cover-image: url(../images/cover-image-dark.png);
-  /* --page-padding: 10px; */
   --tagline-text-color: #DB00FF;
-  --tagline-text-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
 
 .page.theme_dark {

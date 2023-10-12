@@ -2,7 +2,7 @@
 
 /*
 ///////////////////////////////////////////////////////////////////////////////////
-TODO: 1) header-text size 2) reorganise variables 3) buttons position in light theme.
+TODO: 1) check paddings
 ///////////////////////////////////////////////////////////////////////////////////
 */
 
@@ -13,15 +13,11 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
 .header {
   position: relative;
   display: grid;
+  grid-template-rows: 1fr 192px 1fr;
   padding-block: 10px;
   padding-inline: 10px;
-  /* block-size: max(668px, 100vh); */
   min-height: 100vh;
-}
-
-.decorated-zone {
-  /* padding: var(--decorated-zone-padding); */
-  /* outline: 1px solid var(--small-header-text-color); */
+  justify-content: space-between;
 }
 
 .decorated-zone::before {
@@ -46,37 +42,10 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
   border-right: 1px solid var(--small-header-text-color);
 }
 
-/* .header__decorative-element_top-right {
-  justify-self: end;
-  display: flex;
-  flex-direction: row;
-  //border: 1px solid var(--small-header-text-color);
-  //border-bottom: none;
-  //border-left: none;
-}
-
-.header__decorative-element_top-right::after {
-  content: "";
-  border-radius: 50%;
-  background-color: var(--title-decor-back-color);
-  width: 9px;
-  height: 9px;
-  align-self: center;
-  margin: 0 9px 0 10px;
-}
-
-.header__decorative-element-text {
-  text-transform: uppercase;
-  color: var(--small-header-text-color);
-  text-align: center;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 25px;
-} */
-
 .empty-tag {
-  position: relative;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .empty-tag::before {
@@ -106,7 +75,9 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
 
 .header__theme-menu {
   justify-self: end;
-  margin-top: 5.83vh;
+  align-self: center;
+  margin-inline-end: -10px;
+  grid-row: 1/2;
 }
 
 .header__theme-menu-list {
@@ -147,21 +118,17 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
   border-bottom: 1px solid var(--button-hover-border-color);
 }
 
-.header__theme-menu-button_type_light {
-
-}
-
 .header__theme-menu-button_active {
   pointer-events: none;
   outline: 1px solid var(--small-header-text-color);
 }
 
 .header__tagline {
-  margin-top: 9.73vh;
+  grid-row: 2/3;
 }
 
 .header__tagline-text {
-  font-size: var(--tagline-text-size);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);;
   color: var(--tagline-text-color);
   text-shadow: 4px 4px 0 var(--title-decor-back-color);
   font-style: normal;
@@ -170,10 +137,9 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
 }
 
 .header__title {
-  margin-top: 8.23vh;
-  margin-bottom: 9.88vh;
-  /* width: 100vw; */
-  justify-self: end;
+  display: grid;
+  grid-row: 3/4;
+  align-content: center;
 }
 
 .title-decor {
@@ -191,13 +157,12 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
 }
 
 .header__title-text {
-
+  justify-self: center;
 }
 
 .main {
   padding-inline: 10px;
   padding-block: 40px;
-  /* display: flex; */
 }
 
 .section {
@@ -265,17 +230,12 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* padding: 10px; */
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .image-section {
   gap: 10px;
 }
-
-/* .image-section img {
-  width: calc(100vw - 20px);
-} */
 
 .image-section__block-card:not(:first-child) {
   margin-top: 10px;
@@ -290,13 +250,11 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
 
 .footer {
   position: relative;
-  /* block-size: max(668px, 100vh); */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  /* margin-block-start: 40px; */
 }
 
 .footer__tagline-text {
@@ -310,12 +268,9 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
 
 @media (min-width: 768px) {
 
-  /* .page {
-    padding: 20px;
-  } */
-
   .header {
-    /* block-size: max(1024px, 100vh); */
+    grid-template-rows: 1fr 100px 1fr;
+    grid-template-columns: 1fr;
     padding-block: 20px;
     padding-inline: 20px;
   }
@@ -330,6 +285,11 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
     top: 20px;
   }
 
+  .empty-tag {
+    top: 20px;
+    right: 20px;
+  }
+
   .block-paragraph-position {
     display: grid;
     grid-template-columns: 30.75vw 1fr;
@@ -337,7 +297,12 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
   }
   
   .header__title {
-    width: 50vw;
+    width: calc(50vw - 20px);
+    justify-self: end;
+  }
+
+  .header__tagline-text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .main {
@@ -353,7 +318,6 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
-    /* column-gap: 20px; */
   }
 
   .image-section__block-card:not(:first-child) {
@@ -397,32 +361,15 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
   }
 
   .footer {
-    /* block-size: max(1024px, 100vh); */
-    /* margin-block-start: 60px; */
     padding: 20px;
   }
 }
 
 @media (min-width: 1024px) {
 
-  /* :root {
-    --page-padding: 20px;
-  } */
-
-  /* .header {
-    block-size: max(768px, 100vh);
-  } */
-
   .header__theme-menu {
-    margin-top: 0;
     justify-self: center;
-    /* align-self: center;
-    display: flex;
-    flex-direction: row; */
-    /* display: grid; */
-    /* align-items: start; */
-    /* justify-items: flex-start; */
-    /* gap: 36px; */
+    align-self: flex-start;
   }
 
   .header__theme-menu-list {
@@ -449,9 +396,4 @@ TODO: 1) header-text size 2) reorganise variables 3) buttons position in light t
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
   }
-
-  /* .footer {
-    block-size: max(768px, 100vh);
-    min-height: 100vh;
-  } */
 }
