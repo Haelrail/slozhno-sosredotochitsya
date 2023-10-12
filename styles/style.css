@@ -14,17 +14,17 @@ TODO: 1) check paddings
   position: relative;
   display: grid;
   grid-template-rows: 1fr 192px 1fr;
-  padding-block: 10px;
-  padding-inline: 10px;
-  min-height: 100vh;
   justify-content: space-between;
+  min-height: 100vh;
+  padding-inline: 10px;
+  padding-block: 10px;
 }
 
 .decorated-zone::before {
   content: "";
   position: absolute;
-  left: 10px;
   bottom: 10px;
+  left: 10px;
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--small-header-text-color);
@@ -34,8 +34,8 @@ TODO: 1) check paddings
 .decorated-zone::after {
   content: "";
   position: absolute;
-  right: 10px;
   top: 10px;
+  right: 10px;
   width: 25px;
   height: 25px;
   border-top: 1px solid var(--small-header-text-color);
@@ -51,33 +51,33 @@ TODO: 1) check paddings
 .empty-tag::before {
   content: "rec";
   position: absolute;
+  right: 28px;
   color: var(--small-header-text-color);
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: 25px;
-  right: 28px;
   text-transform: uppercase;
 }
 
 .empty-tag::after {
   content: "";
   position: absolute;
-  color: var(--small-header-text-color);
+  top: 8px;
+  right: 9px;
   width: 9px;
   height: 9px;
-  background-color: var(--small-header-text-color);
   border: 1px solid var(--small-header-text-color);
   border-radius: 90%;
-  right: 9px;
-  top: 8px;
+  color: var(--small-header-text-color);
+  background-color: var(--small-header-text-color);
 }
 
 .header__theme-menu {
+  grid-row: 1/2;
   justify-self: end;
   align-self: center;
   margin-inline-end: -10px;
-  grid-row: 1/2;
 }
 
 .header__theme-menu-list {
@@ -93,17 +93,17 @@ TODO: 1) check paddings
 }
 
 .header__theme-menu-button {
-  background-color: transparent;
-  text-transform: lowercase;
-  border: none;
   min-height: 26px;
+  border: none;
+  padding: 0 13px;
   color: var(--small-header-text-color);
-  text-align: center;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: 18px;
-  padding: 0 13px;
+  text-align: center;
+  text-transform: lowercase;
+  background-color: transparent;
 }
 
 .header__theme-menu-button:hover {
@@ -119,8 +119,8 @@ TODO: 1) check paddings
 }
 
 .header__theme-menu-button_active {
-  pointer-events: none;
   outline: 1px solid var(--small-header-text-color);
+  pointer-events: none;
 }
 
 .header__tagline {
@@ -128,12 +128,12 @@ TODO: 1) check paddings
 }
 
 .header__tagline-text {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);;
   color: var(--tagline-text-color);
-  text-shadow: 4px 4px 0 var(--title-decor-back-color);
-  font-style: normal;
   font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-style: normal;
   line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--title-decor-back-color);
 }
 
 .header__title {
@@ -143,17 +143,17 @@ TODO: 1) check paddings
 }
 
 .title-decor {
-  background-color: var(--title-decor-back-color);
   color: var(--title-decor-text-color);
+  font-weight: 700;
   font-size: 18px;
   font-style: normal;
-  font-weight: 700;
   line-height: 23.4px;
+  background-color: var(--title-decor-back-color);
 }
 
 .title-decor-small-font-weight {
-  font-weight: 400;
   margin-top: 20px;
+  font-weight: 400;
 }
 
 .header__title-text {
@@ -181,9 +181,9 @@ TODO: 1) check paddings
 
 .section__title {
   color: var(--small-header-text-color);
+  font-weight: 700;
   font-size: 18px;
   font-style: normal;
-  font-weight: 700;
   line-height: 23.4px;
 }
 
@@ -193,22 +193,22 @@ TODO: 1) check paddings
 }
 
 .section__body-text {
+  margin-top: 10px;
   color: var(--text-color);
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: 23.4px;
-  margin-top: 10px;
 }
 
 .link {
   color: var(--text-color);
-  text-shadow: 1px 1px 0 var(--tagline-text-color);
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
   text-decoration: none;
+  text-shadow: 1px 1px 0 var(--tagline-text-color);
 }
 
 .link:hover {
@@ -227,8 +227,8 @@ TODO: 1) check paddings
   background-color: var(--background-color);
   background-image: var(--cover-image);
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
@@ -250,39 +250,39 @@ TODO: 1) check paddings
 
 .footer {
   position: relative;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding: 10px;
 }
 
 .footer__tagline-text {
-  font-size: var(--tagline-text-size);
   color: var(--tagline-text-color);
-  text-shadow: 2px 2px 0 var(--title-decor-back-color);
-  font-style: normal;
   font-weight: 700;
+  font-size: var(--tagline-text-size);
+  font-style: normal;
   line-height: 82.5%;
+  text-shadow: 2px 2px 0 var(--title-decor-back-color);
 }
 
 @media (min-width: 768px) {
 
   .header {
-    grid-template-rows: 1fr 100px 1fr;
     grid-template-columns: 1fr;
-    padding-block: 20px;
+    grid-template-rows: 1fr 100px 1fr;
     padding-inline: 20px;
+    padding-block: 20px;
   }
 
   .decorated-zone::before {
-    left: 20px;
     bottom: 20px;
+    left: 20px;
   }
   
   .decorated-zone::after {
-    right: 20px;
     top: 20px;
+    right: 20px;
   }
 
   .empty-tag {
@@ -297,8 +297,8 @@ TODO: 1) check paddings
   }
   
   .header__title {
-    width: calc(50vw - 20px);
     justify-self: end;
+    width: calc(50vw - 20px);
   }
 
   .header__tagline-text {
@@ -316,8 +316,8 @@ TODO: 1) check paddings
 
   .image-section__block {
     display: grid;
-    gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
   }
 
   .image-section__block-card:not(:first-child) {
@@ -393,7 +393,7 @@ TODO: 1) check paddings
 
   .inline-paragraph-position .section__body {
     display: grid;
-    gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
   }
 }
