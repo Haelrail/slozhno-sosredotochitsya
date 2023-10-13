@@ -279,6 +279,10 @@
     right: 20px;
   }
 
+  .section:not(:first-child) {
+    margin-top: 80px;
+  }
+
   .block-paragraph-position {
     display: grid;
     grid-template-columns: 30.75vw 1fr;
