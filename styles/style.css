@@ -257,6 +257,10 @@
 
 @media (min-width: 768px) {
 
+  :root {
+    --tagline-text-size: 120px;
+  }
+
   .header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 100px 1fr;
@@ -370,6 +374,10 @@
 }
 
 @media (min-width: 1024px) {
+
+  :root {
+    --tagline-text-size: 157px;
+  }
 
   .header__theme-menu {
     justify-self: center;
