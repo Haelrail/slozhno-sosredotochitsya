@@ -383,6 +383,10 @@
     --tagline-text-size: 157px;
   }
 
+  .header {
+    grid-template-rows: 1fr 130px 1fr;
+  }
+
   .header__theme-menu {
     justify-self: center;
     align-self: flex-start;
