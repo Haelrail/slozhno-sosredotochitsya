@@ -148,10 +148,6 @@
   font-weight: 400;
 }
 
-.block-paragraph-position .section__body {
-  margin-block-start: 20px;
-}
-
 .header__title-text {
   justify-self: center;
 }
@@ -177,6 +173,10 @@
   font-size: 18px;
   font-style: normal;
   line-height: 23.4px;
+}
+
+.section__additional-title {
+  margin-block-end: 20px;
 }
 
 .section__body {
