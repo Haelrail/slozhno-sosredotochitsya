@@ -76,11 +76,11 @@
 }
 
 .header__theme-menu-list {
-  margin-inline-end: 13px;
+  margin-inline-end: 10px;
 }
 
 .header__theme-menu-item {
-  margin-top: 1.95vh;
+  margin-top: 10px;
 }
 
 .header__theme-menu-item:first-child {
@@ -283,11 +283,11 @@
   }
 
   .header__theme-menu {
-    margin-inline-end: -12px;
+    margin-inline-end: -10px;
   }
 
   .header__theme-menu-item {
-    margin-top: 0.97vh;
+    margin-top: 10px;
   }
 
   .section:not(:first-child) {
@@ -400,7 +400,7 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-inline-end: 13px;
+    margin-inline-end: 10px;
   }
 
   .header__theme-menu-item {
