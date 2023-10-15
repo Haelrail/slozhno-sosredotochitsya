@@ -14,3 +14,17 @@
   --tagline-text-color: #DB00FF;
   --tagline-text-size: 116px;
 }
+
+@media (min-width: 768px) {
+
+  :root {
+    --tagline-text-size: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  :root {
+    --tagline-text-size: 157px;
+  }
+}
